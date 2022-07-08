@@ -44,6 +44,29 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+	use {
+  	'kyazdani42/nvim-tree.lua',
+  	requires = {
+    	'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  	},
+  	tag = 'nightly' -- optional, updated every week. (see issue #1193)
+	}
+  use 'tiagovla/tokyodark.nvim'
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "v2.*",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use 'xiyaowong/nvim-transparent.nvim'
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
