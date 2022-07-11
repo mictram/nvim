@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use {
     -- lspcomfig
     "neovim/nvim-lspconfig",
+    "williamboman/nvim-lsp-installer",
 
     -- cmp
     "hrsh7th/cmp-nvim-lsp",
