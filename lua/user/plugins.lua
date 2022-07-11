@@ -75,6 +75,23 @@ return packer.startup(function(use)
   }
   use "lukas-reineke/indent-blankline.nvim"
 
+  -- lsp
+  use {
+    -- lspcomfig
+    "neovim/nvim-lspconfig",
+
+    -- cmp
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/nvim-cmp",
+
+    -- vsnip
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/vim-vsnip",
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
