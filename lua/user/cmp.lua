@@ -2,6 +2,15 @@ vim.cmd "set completeopt=menu,menuone,noselect"
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+local lspkind = require('lspkind')
+
+local source_mapping = {
+	buffer = "[Buffer]",
+	nvim_lsp = "[LSP]",
+	nvim_lua = "[Lua]",
+	cmp_tabnine = "[TN]",
+	path = "[Path]",
+}
 
 cmp.setup({
   snippet = {
@@ -22,12 +31,50 @@ cmp.setup({
     ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
     ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
   }),
-  sources = cmp.config.sources({
+  sources = {
+    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-  }, {
+    { name = 'vsnip' },
     { name = 'buffer' },
-  })
+  },
+  --formatting = {
+	--	format = function(entry, vim_item)
+	--		vim_item.kind = lspkind.presets.default[vim_item.kind]
+	--		local menu = source_mapping[entry.source.name]
+	--		if entry.source.name == 'cmp_tabnine' then
+	--			if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+	--				menu = entry.completion_item.data.detail .. ' ' .. menu
+	--			end
+	--			vim_item.kind = ''
+	--		end
+	--		vim_item.menu = menu
+	--		return vim_item
+	--	end
+	--},
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol_text", -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+      maxwidth = 40, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function(entry, vim_item)
+        vim_item.kind = lspkind.presets.default[vim_item.kind]
+
+        local menu = source_mapping[entry.source.name]
+        if entry.source.name == "cmp_tabnine" then
+          if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
+            menu = entry.completion_item.data.detail .. " " .. menu
+          end
+          vim_item.kind = ""
+        end
+
+        vim_item.menu = menu
+
+        return vim_item
+      end,
+    }),
+  },
 })
 
 -- Set configuration for specific filetype.

@@ -90,6 +90,12 @@ return packer.startup(function(use)
     -- vsnip
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
+
+    -- lspkind for completion menu pictograms
+    "onsails/lspkind.nvim",
+
+    -- tabnine AI completion
+    {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   }
 	use {
 		"folke/trouble.nvim",
@@ -102,6 +108,8 @@ return packer.startup(function(use)
 			}
 		end
 	}
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
