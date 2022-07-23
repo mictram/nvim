@@ -65,6 +65,7 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  --- auto-resize splits
   use {
     "beauwilliams/focus.nvim", config = function() require("focus").setup() end
   }
@@ -108,6 +109,7 @@ return packer.startup(function(use)
 			}
 		end
 	}
+  use "junegunn/goyo.vim";
 
 
 
