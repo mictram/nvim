@@ -32,10 +32,11 @@ cmp.setup({
     ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
   }),
   sources = {
-    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
+    { name = 'cmp_tabnine' },
     { name = 'vsnip' },
     { name = 'buffer' },
+    { name = 'vsnip' },
   },
   formatting = {
 		format = function(entry, vim_item)
@@ -95,7 +96,8 @@ local servers = {
   'html',
   'jsonls',
   'cssls',
-  'rust_analyzer'
+  'rust_analyzer',
+  'clangd'
 }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
