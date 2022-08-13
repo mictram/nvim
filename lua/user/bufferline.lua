@@ -165,3 +165,6 @@ bufferline.setup {
     },
   },
 }
+
+vim.cmd "nnoremap <silent>[b :BufferLineCycleNext<CR>"
+vim.cmd "nnoremap <silent>]b :BufferLineCyclePrev<CR>"
