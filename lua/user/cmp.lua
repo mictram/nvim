@@ -127,7 +127,7 @@ local lsp_flags = {
 }
 
 local servers = {
-  'pyright',
+  'jedi_language_server',
   'sumneko_lua',
   'yamlls',
   'bashls',
