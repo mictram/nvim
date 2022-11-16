@@ -47,3 +47,7 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 
 -- Custom menu items
 vim.cmd ":menu File.Save  :w<CR>"
+
+vim.cmd "nnoremap <Leader>oc :e %<.c<CR>"
+vim.cmd "nnoremap <Leader>oC :e %<.cpp<CR>"
+vim.cmd "nnoremap <Leader>oh :e %<.h<CR>"
