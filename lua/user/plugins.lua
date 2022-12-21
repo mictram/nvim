@@ -65,10 +65,13 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  --- auto-resize splits
-  use {
-    "beauwilliams/focus.nvim", config = function() require("focus").setup() end
-  }
+ 
+  -- auto-resize splits
+  -- https://github.com/beauwilliams/focus.nvim
+  --use {
+  --  "beauwilliams/focus.nvim", config = function() require("focus").setup() end
+  --}
+
 	use {
 		'nvim-treesitter/nvim-treesitter',
     --run = ':TSUpdate'
