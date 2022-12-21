@@ -51,3 +51,7 @@ vim.cmd ":menu File.Save  :w<CR>"
 vim.cmd "nnoremap <Leader>oc :e %<.c<CR>"
 vim.cmd "nnoremap <Leader>oC :e %<.cpp<CR>"
 vim.cmd "nnoremap <Leader>oh :e %<.h<CR>"
+
+-- Line length color column
+vim.cmd "highlight ColorColumn ctermbg=grey" -- other colors showing as grey
+vim.cmd "call matchadd('ColorColumn', '\\%81v', 100)"
