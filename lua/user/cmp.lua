@@ -128,7 +128,7 @@ local lsp_flags = {
 
 local servers = {
   'jedi_language_server',
-  'sumneko_lua',
+  'lua_ls',
   'yamlls',
   'bashls',
   'zk',
