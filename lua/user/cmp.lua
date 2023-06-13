@@ -32,8 +32,8 @@ cmp.setup({
     ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
   }),
   sources = {
-    { name = 'nvim_lsp' },
     { name = 'cmp_tabnine' },
+    { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'buffer' },
     { name = 'vsnip' },
@@ -128,6 +128,7 @@ local lsp_flags = {
 
 local servers = {
   'jedi_language_server',
+  'ruff_lsp',
   'lua_ls',
   'yamlls',
   'bashls',

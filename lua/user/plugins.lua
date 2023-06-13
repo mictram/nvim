@@ -51,7 +51,6 @@ return packer.startup(function(use)
   	},
   	tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
-  use 'tiagovla/tokyodark.nvim'
   use {
     'akinsho/bufferline.nvim',
     tag = "v2.*",
@@ -120,6 +119,11 @@ return packer.startup(function(use)
   
   use "ludovicchabant/vim-gutentags"
 
+  use 'tiagovla/tokyodark.nvim'
+  use { "folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {},}
+  use { "catppuccin/nvim", as = "catppuccin" }
+  use { "bluz71/vim-moonfly-colors", as = "moonfly" }
+  use { "bluz71/vim-nightfly-colors", as = "nightfly" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
