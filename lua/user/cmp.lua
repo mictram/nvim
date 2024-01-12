@@ -82,8 +82,14 @@ cmp.setup.cmdline(':', {
 })
 
 -- Setup LSP installer
-require("nvim-lsp-installer").setup({
-    automatic_installation = true
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
 })
 
 -- Setup lspconfig.

@@ -77,11 +77,14 @@ return packer.startup(function(use)
   }
   use "lukas-reineke/indent-blankline.nvim"
 
+  -- tabnine
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
   -- lsp
   use {
-    -- lspcomfig
+    -- lspconfig
     "neovim/nvim-lspconfig",
-    "williamboman/nvim-lsp-installer",
+    "williamboman/mason.nvim",
 
     -- cmp
     "hrsh7th/cmp-nvim-lsp",
@@ -100,17 +103,18 @@ return packer.startup(function(use)
     -- tabnine AI completion
     {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   }
-	use {
-		"folke/trouble.nvim",
-		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("trouble").setup {
-				-- your configuration comes here
-				-- or leave it empty to use the default settings
-				-- refer to the configuration section below
-			}
-		end
-	}
+
+  use {
+  	"folke/trouble.nvim",
+  	requires = "kyazdani42/nvim-web-devicons",
+  	config = function()
+  		require("trouble").setup {
+  			-- your configuration comes here
+  			-- or leave it empty to use the default settings
+  			-- refer to the configuration section below
+  		}
+  	end
+  }
   use "junegunn/goyo.vim"
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
