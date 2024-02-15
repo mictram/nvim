@@ -77,9 +77,6 @@ return packer.startup(function(use)
   }
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- tabnine
-  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
-
   -- lsp
   use {
     -- lspconfig
@@ -99,9 +96,6 @@ return packer.startup(function(use)
 
     -- lspkind for completion menu pictograms
     "onsails/lspkind.nvim",
-
-    -- tabnine AI completion
-    {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   }
 
   use {
@@ -128,6 +122,8 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
   use { "bluz71/vim-moonfly-colors", as = "moonfly" }
   use { "bluz71/vim-nightfly-colors", as = "nightfly" }
+
+  use 'bkad/CamelCaseMotion'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
