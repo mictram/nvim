@@ -56,4 +56,4 @@ vim.cmd "nnoremap <Leader>oh :e %<.h<CR>"
 vim.cmd "highlight ColorColumn ctermbg=grey" -- other colors showing as grey
 vim.cmd "call matchadd('ColorColumn', '\\%81v', 100)"
 
-vim.cmd "let g:camelcasemotion_key = '<leader>'"
+vim.cmd "let g:camelcasemotion_key = ','"
