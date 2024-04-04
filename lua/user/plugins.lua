@@ -49,7 +49,6 @@ return packer.startup(function(use)
   	requires = {
     	'kyazdani42/nvim-web-devicons', -- optional, for file icons
   	},
-  	tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
   use {
     'akinsho/bufferline.nvim',
