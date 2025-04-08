@@ -57,3 +57,8 @@ vim.cmd "highlight ColorColumn ctermbg=grey" -- other colors showing as grey
 vim.cmd "call matchadd('ColorColumn', '\\%81v', 100)"
 
 vim.cmd "let g:camelcasemotion_key = ','"
+
+-- Disable virtual_text since it's redundant due to lsp_lines.
+vim.diagnostic.config({
+  virtual_text = true,
+})
