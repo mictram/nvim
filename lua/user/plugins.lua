@@ -148,6 +148,8 @@ return packer.startup(function(use)
     	  end,
   }
 
+  use { "nanozuki/tabby.nvim" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
